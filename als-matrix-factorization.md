@@ -74,3 +74,44 @@ from pyspark.sql import SparkSession
 spark = SparkSession.builder.getOrCreate()
 ```
 
+Создадим DataFrame с рейтингами из скачанного датасета:
+```py
+schema = StructType([
+    StructField('user'     , IntegerType()),
+    StructField('movie'    , IntegerType()),
+    StructField('rating'   , DoubleType ()),
+    StructField('timestamp', LongType   ()),
+])
+
+ratings = spark.read.csv('ml-latest-small/ratings.csv', header=True, schema=schema).select(['user', 'movie', 'rating'])
+ratings = ratings.limit(500)
+ratings.show()
+```
+
+```
++----+-----+------+
+|user|movie|rating|
++----+-----+------+
+|   1|    1|   4.0|
+|   1|    3|   4.0|
+|   1|    6|   4.0|
+|   1|   47|   5.0|
+|   1|   50|   5.0|
+|   1|   70|   3.0|
+|   1|  101|   5.0|
+|   1|  110|   4.0|
+|   1|  151|   5.0|
+|   1|  157|   5.0|
+|   1|  163|   5.0|
+|   1|  216|   5.0|
+|   1|  223|   3.0|
+|   1|  231|   5.0|
+|   1|  235|   4.0|
+|   1|  260|   5.0|
+|   1|  296|   3.0|
+|   1|  316|   3.0|
+|   1|  333|   5.0|
+|   1|  349|   4.0|
++----+-----+------+
+only showing top 20 rows
+```
