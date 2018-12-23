@@ -1,3 +1,12 @@
 - in pyspark?
 - в принципе python код гуглится где вручную подробно расписан алгоритм обновления матриц
 - [a2f87e91cb5c441c57657cceb788c86c](https://gist.github.com/tandav/a2f87e91cb5c441c57657cceb788c86c)
+
+
+---
+
+### theory  
+
+### pyspark implementation  
+
+
