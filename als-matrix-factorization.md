@@ -40,6 +40,26 @@
 ![image](https://user-images.githubusercontent.com/5549677/50385990-a499bd00-06ef-11e9-92bf-c3298888a679.png)
 
 
-### pyspark implementation  
+### Пример реализации алгоритма для больших данных с использованием pyspark
+Databricks предостовляет бесплатный spark кластер для учебных целей.  
+Доступ к кластеру осуществляется через jupyter.  
+https://community.cloud.databricks.com
 
+#### Установка своего pyspark кластера с исползованием docker
+требования: установленный docker
+
+Запустим контейнер с установленным pyspark
+```
+docker run -p 8888:8888 jupyter/pyspark-notebook
+```
+контейнер также запускает jupyter notebook, который доступен по адресу:  
+http://localhost:8888
+
+Перейдя по адресу можно создать новый notebook, в котором будет нужно вводить весь дальнейший код.  
+
+Скачаем свободный датасет с оценками фильмов от GroupLens:
+```
+!curl -O http://files.grouplens.org/datasets/movielens/ml-latest-small.zip
+!unzip ml-latest-small.zip
+```
 
