@@ -115,3 +115,8 @@ ratings.show()
 +----+-----+------+
 only showing top 20 rows
 ```
+
+Разделим наш датасет на 2 части: для обучения и для тестирования модели. (0.8 датасета на train, 0.2 на test)
+```py
+train, test = ratings.randomSplit([0.8, 0.2])
+```
