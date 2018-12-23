@@ -84,7 +84,7 @@ schema = StructType([
 ])
 
 ratings = spark.read.csv('ml-latest-small/ratings.csv', header=True, schema=schema).select(['user', 'movie', 'rating'])
-ratings = ratings.limit(500)
+# ratings = ratings.limit(500) # uncomment if you want to limit number of rows in dataset
 ratings.show()
 ```
 
