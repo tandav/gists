@@ -63,3 +63,14 @@ http://localhost:8888
 !unzip ml-latest-small.zip
 ```
 
+Импортируем необходимые модули и создадим spark сессию:
+```py
+from pyspark.ml.evaluation import RegressionEvaluator
+from pyspark.ml.recommendation import ALS
+from pyspark.ml.tuning import TrainValidationSplit, ParamGridBuilder
+from pyspark.sql.types import *
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.getOrCreate()
+```
+
