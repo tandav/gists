@@ -59,7 +59,7 @@ http://localhost:8888
 
 Скачаем свободный датасет с оценками фильмов от GroupLens:
 ```
-!curl -O http://files.grouplens.org/datasets/movielens/ml-latest-small.zip
+!wget http://files.grouplens.org/datasets/movielens/ml-latest-small.zip
 !unzip ml-latest-small.zip
 ```
 
@@ -120,3 +120,10 @@ only showing top 20 rows
 ```py
 train, test = ratings.randomSplit([0.8, 0.2])
 ```
+
+Создадим модель ALS.
+```py
+als = ALS(userCol='user', itemCol='movie', ratingCol='rating', coldStartStrategy='drop', nonnegative=True)
+```
+
+
