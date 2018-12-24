@@ -174,5 +174,23 @@ predictions.show()
 only showing top 20 rows
 ```
 
-Построим гистограммы ошибки от реальных значений и предсказанных.
+Построим гистограммы ошибки от реальных значений и предсказанных:
+```py
+import matplotlib.pyplot as plt
+import numpy as np
 
+rating_pred = predictions.rdd.map(lambda x: x.prediction).collect()
+rating_true = predictions.rdd.map(lambda x: x.rating    ).collect()
+
+error = np.array(rating_pred) - np.array(rating_true)
+mean = error.mean()
+std  = error.std() 
+
+plt.figure(figsize=(14, 10))
+plt.plot(error)
+plt.axhline(mean      , color='r')
+plt.axhline(mean - std, color='r')
+plt.axhline(mean + std, color='r')
+```
+
+![image](https://user-images.githubusercontent.com/5549677/50400585-cac76780-0798-11e9-9e4c-92338a8930a0.png)
