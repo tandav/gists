@@ -126,4 +126,8 @@ train, test = ratings.randomSplit([0.8, 0.2])
 als = ALS(userCol='user', itemCol='movie', ratingCol='rating', coldStartStrategy='drop', nonnegative=True)
 ```
 
-
+Обучим модель на тренировачных и сделаем предсказания для тестовых данных
+```py
+als = als.fit(train)
+predictions = als.transform(test)
+```
