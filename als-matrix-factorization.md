@@ -191,7 +191,7 @@ predictions.show()
 only showing top 20 rows
 ```
 
-Построим гистограммы ошибки от реальных значений и предсказанных:
+Посмотрим на ошибки предсказания
 ```py
 import matplotlib.pyplot as plt
 import numpy as np
@@ -209,5 +209,12 @@ plt.axhline(mean      , color='r')
 plt.axhline(mean - std, color='r')
 plt.axhline(mean + std, color='r')
 ```
+![image](https://user-images.githubusercontent.com/5549677/50415238-ff83ff00-082a-11e9-8198-1216d5e15e35.png)
 
-![image](https://user-images.githubusercontent.com/5549677/50400585-cac76780-0798-11e9-9e4c-92338a8930a0.png)
+Гистограммы ошибок
+```py
+plt.figure(figsize=(7, 5))
+plt.hist(error, bins=50, label='error = rating_pred - rating_true')
+plt.legend(loc=1)
+```
+![image](https://user-images.githubusercontent.com/5549677/50415285-3f4ae680-082b-11e9-9056-474add1db03c.png)
