@@ -212,6 +212,7 @@ plt.axhline(mean + std, color='r')
 ```py
 plt.figure(figsize=(7, 5))
 plt.hist(error, bins=50, label='error = rating_pred - rating_true')
+plt.axvline(x=mean, color='red')
 plt.legend(loc=1)
 ```
-![image](https://user-images.githubusercontent.com/5549677/50415285-3f4ae680-082b-11e9-9056-474add1db03c.png)
+![image](https://user-images.githubusercontent.com/5549677/50415541-838ab680-082c-11e9-88db-86da1360cc80.png)
