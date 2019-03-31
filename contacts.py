@@ -7,5 +7,5 @@ contacts = dict(
     lastfm     = 'alx1dr',
     github     = 'tandav',
     soundcloud = 'thetandav',
-    spotify    = 'sfaklyytf1x59ig1h4q31vcd5', 
+    spotify    = 'https://open.spotify.com/user/sfaklyytf1x59ig1h4q31vcd5', 
 )
