@@ -13,7 +13,6 @@ width  *= 2
 height *= 2
 
 img_file = pathlib.Path('blur.jpg').absolute()
-print(img_file)
 
 (
     PIL
