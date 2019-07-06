@@ -7,3 +7,4 @@
 - [fluent interface - Twitter Search](https://twitter.com/search?q=fluent%20interface)
 - [builder pattern - Google Search](https://www.google.com/search?q=builder+pattern&newwindow=1&source=lnms&sa=X&ved=0ahUKEwj8zoKXmZfjAhWNpIsKHeLrDpIQ_AUICygA&biw=1397&bih=798&dpr=1)
 - [fluent interface - Google Search](https://www.google.com/search?q=fluent+interface&oq=Fluent+interface&aqs=chrome.0.0l6.324j0j3&sourceid=chrome&ie=UTF-8)
+- [Command–query separation - Wikipedia](https://en.wikipedia.org/wiki/Command%E2%80%93query_separation)
