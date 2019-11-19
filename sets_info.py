@@ -13,5 +13,13 @@ def sets_info(table_a, table_b, col_a, col_b):
     print('a | b:', len(a | b))
     print('a & b:', len(a & b))
     print('a ^ b:', len(a ^ b))
-    print('a - b:', len(a - b))
-    print('b - a:', len(b - a))
+    a_b = len(a - b)
+    b_a = len(b - a)
+    print('a - b:', a_b)
+    print('b - a:', b_a)
+    
+    if a_b == 0:
+        print('a is subset of b')
+    
+    if b_a == 0:
+        print('b is subset if a')
