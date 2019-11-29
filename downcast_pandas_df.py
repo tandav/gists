@@ -34,6 +34,11 @@ def try_downcast(s):
                 return x.astype(dt)
     
     def float_castable_to_int(x):
+        '''
+        see also: pandas >= 0.24: there is nullable integer data type
+        https://pandas.pydata.org/pandas-docs/stable/user_guide/integer_na.html
+        (aint using it in this function)
+        '''
         return float_is_useless(x) and s.notna().all()
     
     if pd.api.types.is_float_dtype(s) and not float_castable_to_int(s):
