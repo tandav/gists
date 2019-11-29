@@ -14,9 +14,6 @@ def try_downcast(s):
         '''
         return (x.dropna() % 1 == 0).all()
     
-    int_dtypes   = (np.int8, np.  int16, np.  int64, np.  int32,)
-    float_dtypes = (         np.float16, np.float32, np.float64,)
-    
     min_, max_ = s.min(), s.max()
     
     def _downcast(x, num_type):
