@@ -1,3 +1,6 @@
+import pandas as pd
+
+
 def try_downcast(s):
     '''
     s: pd.Series
