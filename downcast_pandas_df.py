@@ -5,6 +5,9 @@ def try_downcast(s):
     '''
     s: pd.Series
     return new series
+    
+    keep in mind that using float16, int8, int16 etc (small dtypes) is unsafe when computing .mean(), .sum()
+    (they can easily be overflown and as a result you'll get nan/inf/broken values)
     '''
     
     def float_is_useless(x):
@@ -23,7 +26,9 @@ def try_downcast(s):
         
         if num_type is float:
             info_func = np.finfo
-            subtypes  = (np.float16, np.float32, np.float64)
+            # subtypes  = (np.float16, np.float32, np.float64)
+            subtypes  = (np.float32, np.float64) # float32 is unsafe, see docstring
+            
             
         for dt in subtypes:
             if dt == x.dtype:
