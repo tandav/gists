@@ -1,7 +1,7 @@
 import sys
 from urllib.parse import urlparse, urlunparse, parse_qs, urlencode
 
-def clean(url, allowed_keys=frozenset({'q', 'tbm'})):
+def clean(url, allowed_keys=('q', 'tbm')):
     o = urlparse(url)
     params = parse_qs(o.query)
     clean_params = {k: params[k] for k in allowed_keys}
